@@ -25,7 +25,7 @@ let readyToDraw = false
 
 function setup() {
     createCanvas(600, 600);
-    slider = createSlider(1, 400, 30)
+    slider = createSlider(1, 400, 200)
 
     Promise.all([cc, pc, nc]).then(async (value) => {
         cc = await value[0].json()
@@ -58,7 +58,7 @@ function draw() {
     line(0, 300, 600, 300)
     line(300, 0, 300, 600)
     translate(300, 300);
-    scale = slider.value()
+    scale = slider.value()/1000
 
 
     if (readyToDraw) {
