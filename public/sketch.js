@@ -25,7 +25,7 @@ let readyToDraw = false
 
 function setup() {
     createCanvas(600, 600);
-    slider = createSlider(1, 400, 200)
+    slider = createSlider(1, 100000, 200)
 
     Promise.all([cc, pc, nc]).then(async (value) => {
         cc = await value[0].json()
